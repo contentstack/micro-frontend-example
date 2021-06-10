@@ -1,0 +1,27 @@
+{
+  "presets": [
+    "@babel/env",
+    "@babel/typescript",
+    "@babel/react"
+  ],
+  "plugins": [
+    [
+      "inline-react-svg"
+    ],
+    [
+      "@babel/plugin-transform-regenerator"
+    ],
+    [
+      "@babel/plugin-syntax-dynamic-import"
+    ],
+    [
+      "transform-class-properties"
+    ],
+    [
+      "@babel/plugin-transform-arrow-functions",
+      {
+        "spec": true
+      }
+    ]
+  ]
+}

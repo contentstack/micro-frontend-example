@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  restaurant:
+    build: restaurant
+    ports:
+      - "8080:8080"
+  pizza-app:
+    build: pizza-app
+    ports:
+      - "8081:8081"
