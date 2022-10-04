@@ -25,4 +25,3 @@ jobs:
           description: |
             PR: ${{ github.event.pull_request.html_url }}
 
-            ${{ github.event.pull_request.body }}
