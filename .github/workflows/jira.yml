@@ -25,3 +25,4 @@ jobs:
           description: |
             PR: ${{ github.event.pull_request.html_url }}
 
+          fields: "${{ secrets.JIRA_FIELDS }}"
