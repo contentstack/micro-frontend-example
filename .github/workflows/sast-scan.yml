@@ -1,0 +1,11 @@
+name: SAST Scan
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  security-sast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Semgrep Scan
+        run: docker run -v /var/run/docker.sock:/var/run/docker.sock -v "${PWD}:/src" returntocorp/semgrep semgrep scan --config auto
