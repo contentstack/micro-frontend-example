@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened]
 jobs:
-  security:
+  security-jira:
     if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'snyk-bot' || contains(github.event.pull_request.head.ref, 'snyk-fix-')  || contains(github.event.pull_request.head.ref, 'snyk-upgrade-')}}
     runs-on: ubuntu-latest
     steps:
