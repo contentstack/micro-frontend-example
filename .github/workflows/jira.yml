@@ -21,7 +21,7 @@ jobs:
           project: ${{ secrets.JIRA_PROJECT }}
           issuetype: ${{ secrets.JIRA_ISSUE_TYPE }}
           summary: |
-            ${{ github.event.pull_request.title }}
+            Snyk | Vulnerability | ${{ github.event.repository.name }} | ${{ github.event.pull_request.title }}
           description: |
             PR: ${{ github.event.pull_request.html_url }}
 
