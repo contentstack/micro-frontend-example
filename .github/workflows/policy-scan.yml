@@ -1,0 +1,27 @@
+name: Checks the security policy and configurations
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  security-policy:
+    if: github.event.repository.visibility == 'public'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@master
+      - name: Checks for SECURITY.md policy file
+        run: |
+          if ! [[ -f "SECURITY.md" || -f ".github/SECURITY.md" ]]; then exit 1; fi
+  security-license:
+    if: github.event.repository.visibility == 'public'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@master
+      - name: Checks for License file
+        run: |
+          if ! [[ -f "LICENSE" || -f "License.txt" || -f "LICENSE.md" || -f "LICENSE.txt" ]]; then exit 1; fi
