@@ -24,4 +24,23 @@ jobs:
       - uses: actions/checkout@master
       - name: Checks for License file
         run: |
-          if ! [[ -f "LICENSE" || -f "License.txt" || -f "LICENSE.md" || -f "LICENSE.txt" ]]; then exit 1; fi
+          expected_license_files=("LICENSE" "LICENSE.txt" "LICENSE.md" "License.txt")
+          license_file_found=false
+          current_year=$(date +"%Y")
+
+          for license_file in "${expected_license_files[@]}"; do
+              if  [ -f "$license_file" ]; then
+                 license_file_found=true
+                 # check the license file for the current year, if not exists, exit with error
+                  if  ! grep -q "$current_year" "$license_file"; then
+                      echo "License file $license_file does not contain the current year."
+                      exit 2
+                  fi
+                  break
+              fi        
+          done
+
+          if [ "$license_file_found" = false ]; then
+              echo "No license file found. Please add a license file to the repository."
+              exit 1
+          fi
