@@ -1,3 +1,6 @@
+> [!WARNING]
+  **This repo is deprecated and no longer maintained. Security updates are not supported. We recommend avoiding its use.**
+
 # micro-frontend example
 
 This repository serves to demonstrate an example of micro-frontend implementation. It consists of the following apps in the respective directories:
