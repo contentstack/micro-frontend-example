@@ -1,4 +1,4 @@
-* @contentstack/marketplace-pr-reviewers
+* @contentstack/developer-ecosystem-pr-reviewers
 .github/workflows/ @contentstack/security-admin
 **/.snyk @contentstack/security-admin
 **/CODEOWNERS @contentstack/security-admin
